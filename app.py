@@ -4,11 +4,6 @@ import pickle
 from pathlib import Path
 
 # 1. Load your trained model
-'''model_path = Path(__file__).parent / "25rp18587.pkl"
-if not model_path.is_file():
-    st.error(f"Model file not found: {model_path}")
-    st.stop()
-'''
 with open('25rp18587.pkl', "rb") as f:
     loaded_model = pickle.load(f)
 
@@ -34,3 +29,4 @@ if st.button("Predict Yield"):
         st.success(f"Predicted Crop Yield: {prediction[0]:.2f} tons per hectare")
     except Exception as e:
         st.error(f"Prediction error: {e}")
+
